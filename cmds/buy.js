@@ -8,7 +8,7 @@ module.exports.run = async (bot,message,args) => {
     return message.channel.send("❌ Вы не правильно написали команду. Попробуйте так: `pf!buy [номер роли]`")
    }
     if (args[0] == '1') {
-        if (author < 13000) return message.channel.send('❌ У вас не хватает 🍬  для покупки этой роли') // if the authors balance is less than 700$ return this, since the role costs 700$ in the store
+        if (author < 13000) return message.channel.send('❌ У вас не хватает 13000 🍬  для покупки этой роли') // if the authors balance is less than 700$ return this, since the role costs 700$ in the store
         
         message.guild.members.get(message.author.id).addRole(message.guild.roles.find(role => role.name === "Пушистая"))
         db.subtract(`candy_${message.author.id}`, 13000)
