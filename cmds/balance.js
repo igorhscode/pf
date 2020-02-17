@@ -10,7 +10,7 @@ let candy = await db.fetch(`candy_${argsUser .id}`)
 if (candy ===  null)  candy=  0;
 let embed = new Discord.RichEmbed()
 .setColor("#e8baf3")
-.setAuthor(message.guild.iconURL)
+.setAuthor("Pink Flame", "https://cdn.discordapp.com/icons/586825171168526336/b9dc978e80594f775692fd8273341336.jpg")
 .setDescription("Баланс")
 .addField('Игрок', `${argsUser}`)
 .addField("Имеет",`${candy} 🍬`)
