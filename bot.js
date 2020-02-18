@@ -24,8 +24,8 @@ fs.readdir('./cmds/',(err,files)=>{
 bot.on('voiceStateUpdate', async(oldMember, newMember) => {
     let oldChannel = oldMember.voiceChannelID;
     let newChannel = newMember.voiceChannelID;
-    let categ      = newMember.guild.channels.get('678340371003998208'); //Айди вашей категории в приватных каналах
-    let chann      = newMember.guild.channels.get('678340503506386944'); //Айди канала в который должен будет зайти человек
+    let categ      = newMember.guild.channels.get('679389592557846538'); //Айди вашей категории в приватных каналах
+    let chann      = newMember.guild.channels.get('679389715711131688'); //Айди канала в который должен будет зайти человек
     if(!categ && !chann) throw new TypeError('Не верно указан один из айди и/или такого канала не существует')
     let channels   = newMember.guild.channels.filter(i => i.parentID == categ.id);
     if(newChannel == chann.id && channels.size < 6) {
@@ -48,7 +48,7 @@ bot.on('ready', () => {
         console.log(link);
     let myGuild = bot.guilds.get('586825171168526336'); 
     let memberCount = myGuild.memberCount; 
-    let memberCountChannel = myGuild.channels.get('678611777684242452'); 
+    let memberCountChannel = myGuild.channels.get('679390511693430806'); 
     memberCountChannel.setName('🍬 На сервере: ' + memberCount) 
     .then(result => console.log(result)) 
     .catch(error => console.log(error));
@@ -85,7 +85,7 @@ bot.on('guildMemberRemove', async member => {
     await channel.send(embed) 
     let myGuild = bot.guilds.get('586825171168526336'); 
     let memberCount = myGuild.memberCount; 
-    let memberCountChannel = myGuild.channels.get('678611777684242452'); 
+    let memberCountChannel = myGuild.channels.get('679390511693430806'); 
     memberCountChannel.setName('🍬 На сервере: ' + memberCount) 
     .then(result => console.log(result)) 
     .catch(error => console.log(error));
@@ -113,7 +113,7 @@ bot.on('guildMemberRemove', async member => {
     await channel.send(embed)
         let myGuild = bot.guilds.get('586825171168526336'); 
         let memberCount = myGuild.memberCount; 
-        let memberCountChannel = myGuild.channels.get('678611777684242452'); 
+        let memberCountChannel = myGuild.channels.get('679390511693430806'); 
         memberCountChannel.setName('🍬 На сервере: ' + memberCount) 
         .then(result => console.log(result)) 
         .catch(error => console.log(error));
