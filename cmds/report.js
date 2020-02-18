@@ -24,8 +24,8 @@ let reportembed = new Discord.RichEmbed()
     .addField('Причина:', `${Rreason}`)
  
     message.channel.send('Ваша жалоба была успешно отправлена! спасибо за жалобу!');
-    message.guild.channels.get('678609170106286101').send(reportembed);
-    message.guild.channels.get('676859040965459986').send(`Новая жалоба в ${coo} ! @here`);
+    message.guild.channels.get('679391761096769562').send(reportembed);
+    message.guild.channels.get('679404377571852329').send(`Новая жалоба в ${coo} ! @here`);
 }
  
 module.exports.help = {
