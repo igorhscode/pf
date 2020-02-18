@@ -15,5 +15,5 @@ bot.send(embed);
 }
 
 module.exports.help = {
-    name: "12345"
+    name: "sexlevel"
 }
