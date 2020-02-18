@@ -1,7 +1,7 @@
 const Discord = module.require("discord.js");
 const fs = require("fs");
 module.exports.run = async (bot,message,args) => {
-let role1 = message.guild.roles.find(role => role.name === "· • ♡ Pink Control ♡ • ·")
+let role1 = message.guild.roles.find(role => role.name === "· • ♡ Pink control ♡ • ·")
     let embed = new Discord.RichEmbed()
     .setAuthor("Pink Flame", "https://cdn.discordapp.com/icons/586825171168526336/b9dc978e80594f775692fd8273341336.jpg")
     .setColor("#d18dda")
