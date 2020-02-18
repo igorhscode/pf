@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("📝Предложение от", `<@${message.author.id}>`)
         .addField("📢Канал", message.channel)
         .addField("📄Предложение", botmessage)
-      bot.channels.get('679391805363585034').send(spy)
+      bot.channels.get('679405544901050383').send(spy)
     };
 
 
