@@ -24,8 +24,8 @@ fs.readdir('./cmds/',(err,files)=>{
 bot.on('voiceStateUpdate', async(oldMember, newMember) => {
     let oldChannel = oldMember.voiceChannelID;
     let newChannel = newMember.voiceChannelID;
-    let categ      = newMember.guild.channels.get('679389592557846538'); //Айди вашей категории в приватных каналах
-    let chann      = newMember.guild.channels.get('679389715711131688'); //Айди канала в который должен будет зайти человек
+    let categ      = newMember.guild.channels.get('611525250236153887'); //Айди вашей категории в приватных каналах
+    let chann      = newMember.guild.channels.get('675402488693915704'); //Айди канала в который должен будет зайти человек
     if(!categ && !chann) throw new TypeError('Не верно указан один из айди и/или такого канала не существует')
     let channels   = newMember.guild.channels.filter(i => i.parentID == categ.id);
     if(newChannel == chann.id && channels.size < 6) {
@@ -91,14 +91,14 @@ bot.on('guildMemberRemove', async member => {
     .catch(error => console.log(error));
 })
     bot.on('guildMemberAdd', async member => {
-        var role = member.guild.roles.find ("name", "◦ ☄️ › Pink Flame");
+        var role = member.guild.roles.find ("name", "・ ☄️ › Pink Flame");
         member.addRole(role);
         let channel = member.guild.channels.find(c => c.name == '⟦💻⟧bot-actions')  
         let argsUser 
         if (member) argsUser = member.user
         else argsUser = message.author
         let role1 = member.guild.channels.find(channel => channel.name === "┌📖руководство")
-        let role2 = member.guild.channels.find(channel => channel.name === "├📚правила")
+        let role2 = member.guild.channels.find(channel => channel.name === "├📚правила)
     let embed = new Discord.RichEmbed()
         .addField("Правила сервера:", `${role1}`, true) //Создаем поле с дин. размером
         .addField("Информация о сервере:", `${role2}`, true) //Создаем поле с дин. размером
@@ -202,7 +202,7 @@ message.channel.send(temp)
         .setImage("https://cdn-images-1.medium.com/max/1600/0*npGNTBfBWAarfC9O.gif")
         .setDescription(`<@${message.author.id}> Ваш новый уровень - ${curlvl + 1} Никогда не останавливайся в начатом, зарабатывая уровень — ты зарабатываешь привилегии!
         Проверить свой уровень можно с помощью команды pf!level`)
-        message.guild.channels.get('678340058331480090').send(lvlup);
+        message.guild.channels.get('675412341398962230').send(lvlup);
       }
       fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
         if(err) console.log(err)
