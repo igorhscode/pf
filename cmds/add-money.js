@@ -15,7 +15,7 @@ module.exports.run = async (bot,message,args) => {
     let argsUser 
     if (member) argsUser = member.user
     else argsUser = message.author
-    if (isNaN(args[0])) return message.channel.send(`${message.author}, вам нужно ввести допустимое число для прибавления.`) // if args[0] (first input) is not a number, return.
+    if (isNaN(args[0])) return message.channel.send(`${em4} ${message.author}, вам нужно ввести допустимое число для прибавления.`) // if args[0] (first input) is not a number, return.
     db.add(`candy_${argsUser.id}`, args[0])
     let bal = await db.fetch(`candy_${argsUser.id}`)
 
