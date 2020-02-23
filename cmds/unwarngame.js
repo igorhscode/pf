@@ -2,14 +2,16 @@ const Discord = module.require("discord.js");
 const fs = require("fs");
 let profile = require("../profile.json");
 module.exports.run = async (bot,message,args) => {
+    let em3 = message.guild.emojis.find(emoji => emoji.name === "yes")
+    let em4 = message.guild.emojis.find(emoji => emoji.name === "not")
     try{
       
-    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("❌ У вас нет прав");
+    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(`${em4} У вас нет прав`);
     let rUser = bot.rUser;
-    if(!args[0]) return bot.send("❌ Вы не указали пользователя");
-    if(!rUser) return bot.send("❌ Пользователь не найден");
-    if(!profile[rUser.id])return bot.send("❌ Пользователя нету в profile.json");
-    if(profile[rUser.id]<=0) return bot.send("❌ У пользователя 0 игровых предупреждений");
+    if(!args[0]) return bot.send(`${em4} Вы не указали пользователя`);
+    if(!rUser) return bot.send(`${em4} Пользователь не найден`);
+    if(!profile[rUser.id])return bot.send(`${em4} Пользователя нету в profile.json`);
+    if(profile[rUser.id]<=0) return bot.send(`${em4} У пользователя 0 игровых предупреждений`);
     profile[rUser.id].gamewarns--;
     fs.writeFile('../profile.json',JSON.stringify(profile),(err)=>{
         if(err) console.log(err);
