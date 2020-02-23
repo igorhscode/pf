@@ -1,7 +1,8 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
 module.exports.run = async (bot,message,args) => {
-
+    let em3 = message.guild.emojis.find(emoji => emoji.name === "yes") 
+    let em4 = message.guild.emojis.find(emoji => emoji.name === "not")
     if (!message.member.hasPermission('MANAGE_GUILD')) { // if message.author / member does not have the permission MANAGE_GUILD, return.
         return message.channels.send('Вы не можете использовать эту команду!').then(msg => {
             setTimeout(() => {
@@ -19,7 +20,7 @@ module.exports.run = async (bot,message,args) => {
     let bal = await db.fetch(`candy_${argsUser.id}`)
 
     let embed = new Discord.RichEmbed()
-    .setAuthor(`✔️ Добавлены 🍬!`)
+    .setAuthor(`${em3} Добавлены 🍬!`)
     .addField("Игрок", argsUser.username)
     .addField(`Количество`, `${args[0]} 🍬`)
     .addField(`Баланс:`, `${bal} 🍬`)
